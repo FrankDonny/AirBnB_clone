@@ -1,8 +1,12 @@
-# PROJECT DESCRIPTION: AirBnB_clone project
- COMMAND INTERPRETER DESCRIPTION:
-    HOW TO START:
-        * Execute the Console.py, the shell will start with a prompt "(hbnb)"
-    HOW TO USE IT:
+# AIRBNB_CLONE PROJECT
+Find the collaborators of this project in the AUTHOR file
+
+# COMMAND INTERPRETER DESCRIPTION
+The console.py interpretes the only the commands assigned to this project.
+This is how to use the console.py
+* HOW TO START:
+     * Execute the Console.py, the shell will start with a prompt "(hbnb)"
+* HOW TO USE IT:
         * Type the "create" command to create a new instance of the BaseModel and return its id.
           (USAGE: create BaseModel)
         * Type the "show" comand to print the string representation of an instance based on its class name and id.
