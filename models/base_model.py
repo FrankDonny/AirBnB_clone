@@ -3,7 +3,7 @@
 This is the base class that defines the rest of the class
 involved in the Airbnb_clone project
 """
-import datetime
+from datetime import datetime
 import uuid
 
 
@@ -18,8 +18,8 @@ class BaseModel:
         if not kwargs:
             from models import storage
             self.id = str(uuid.uuid4())
-            self.created_at = datetime.datetime.now()
-            self.updated_at = datetime.datetime.now()
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
             storage.new(self)
         else:
             for ky, value in kwargs.items():
@@ -29,7 +29,7 @@ class BaseModel:
                     self.id = value
                     setattr(self, ky, self.id)
                 elif ky == "created_at" or ky == "updated_at":
-                    value = datetime.datetime.now()
+                    value = datetime.now()
                     setattr(self, ky, value.strftime("%Y, %m, %d, %H, %M, %S"))
                 else:
                     setattr(self, ky, value)
@@ -39,7 +39,7 @@ class BaseModel:
         This method updates the updated_at instance
         """
         from models import storage
-        self.updated_at = datetime.datetime.now()
+        self.updated_at = datetime.now()
         storage.save()
 
     def to_dict(self):

@@ -85,8 +85,8 @@ class HBNBCommand(cmd.Cmd):
         obj_dict = storage.all()
         if len(lines) == 1 and lines[0] in key_list:
             for key in obj_dict:
-                if obj_dict[key].__class__.__str__() == arg:
-                    ls.append(obj_dict[arg].__str__())
+                if obj_dict[key].__class__.__name__ == arg:
+                    ls.append(obj_dict[key].__str__())
             print(ls)
         elif len(arg) == 0:
             for k in obj_dict:
@@ -97,12 +97,28 @@ class HBNBCommand(cmd.Cmd):
         """updates an instance"""
         obj_dict = storage.all()
         list_arg = arg.split()
-        if list_arg[0] in key_list:
-            for key in obj_dict:
-                if obj_dict[key].__class__ == list_arg[0]:
-                    obj_dict[list_arg[2]] = list_arg[3]
-                    obj_dict.update()
-                    storage.save()
+        new_attr = list_arg[2]
+        new_attr_val = list_arg[3]
+        if len(list_arg) == 0:
+            print("** class name missing **")
+        elif list_arg[0] not in key_list:
+            print("** class doesn't exist **")
+        elif list_arg[1] is False:
+            print("** instance id missing **")
+        elif (list_arg[0] + "." + list_arg[1]) not in storage.all():
+            print("** no instance found **")
+        elif list_arg[2] is False:
+            print("** attribute name missing **")
+        elif list_arg[3] is False:
+            print("** value missing **")
+        elif len(list_arg) > 4:
+            pass
+        else:
+            obj = list_arg[0] + "." + list_arg[1]
+            for k, v in obj_dict.items():
+                if k == obj:
+                    setattr(storage.all()[k], new_attr, new_attr_val.strip("\""))
+                    storage.all()[k].save()
 
     def do_quit(self, line):
         """implementing the quit command"""
@@ -119,7 +135,8 @@ class HBNBCommand(cmd.Cmd):
         elif arg == "create":
             print("Create: command to create a new object and return it's ID")
         elif arg == "show":
-            print("Show: command to display a string representation of an object")
+            print("Show: command to display a string representation"
+                  "of an object")
         else:
             print("""
 Documented commands (type help <topic>):
