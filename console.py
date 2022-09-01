@@ -96,29 +96,35 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, arg):
         """updates an instance"""
         obj_dict = storage.all()
-        list_arg = arg.split()
-        new_attr = list_arg[2]
-        new_attr_val = list_arg[3]
-        if len(list_arg) == 0:
-            print("** class name missing **")
-        elif list_arg[0] not in key_list:
-            print("** class doesn't exist **")
-        elif list_arg[1] is False:
-            print("** instance id missing **")
-        elif (list_arg[0] + "." + list_arg[1]) not in storage.all():
-            print("** no instance found **")
-        elif list_arg[2] is False:
-            print("** attribute name missing **")
-        elif list_arg[3] is False:
-            print("** value missing **")
-        elif len(list_arg) > 4:
-            pass
-        else:
-            obj = list_arg[0] + "." + list_arg[1]
+        if len(arg.split()) == 4:
+            args = arg.split()
+            obj = args[0] + "." + args[1]
+            new_attr = args[2]
+            new_attr_val = args[3]
             for k, v in obj_dict.items():
                 if k == obj:
                     setattr(storage.all()[k], new_attr, new_attr_val.strip("\""))
                     storage.all()[k].save()
+        elif len(arg.split()) == 0:
+            print("** class name missing **")
+        if len(arg.split()) == 1:
+            args = arg.split()
+            if args[0] not in key_list:
+                print("** class doesn't exist **")
+            else:
+                print("** instance id missing **")
+        if len(arg.split()) == 2:
+            args = arg.split()
+            if (args[0] + "." + args[1]) not in storage.all():
+                print("** no instance found **")
+            else:
+                print("** attribute name missing **")
+        elif len(arg.split()) == 3:
+            args = arg.split()
+            if (args[0] + "." + args[1]) in storage.all():
+                print("** value missing **")
+        elif len(arg.split()) > 4:
+            pass
 
     def do_quit(self, line):
         """implementing the quit command"""
