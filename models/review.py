@@ -1,14 +1,13 @@
 #!/usr/bin/python3
-"""module containing the User class"""
+"""module containing the Review class"""
 from models.base_model import BaseModel
 
 
-class User(BaseModel):
-    """User class inherits from BaseModel"""
-    email = ""
-    password = ""
-    first_name = ""
-    last_name = ""
+class Review(BaseModel):
+    """Review class inherits from BaseModel"""
+    place_id = ""
+    user_id = ""
+    text = ""
 
     def __init__(self, *args, **kwargs):
         """initialize from the parent class"""

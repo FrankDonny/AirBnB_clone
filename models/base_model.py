@@ -5,7 +5,6 @@ involved in the Airbnb_clone project
 """
 import datetime
 import uuid
-from models import storage
 
 
 class BaseModel:
@@ -17,6 +16,7 @@ class BaseModel:
         kwargs: a key value pair of a dictionary argument
         """
         if not kwargs:
+            from models import storage
             self.id = str(uuid.uuid4())
             self.created_at = datetime.datetime.now()
             self.updated_at = datetime.datetime.now()
@@ -38,6 +38,7 @@ class BaseModel:
         """
         This method updates the updated_at instance
         """
+        from models import storage
         self.updated_at = datetime.datetime.now()
         storage.save()
 
@@ -59,4 +60,4 @@ class BaseModel:
         """
         :return: the string representation of the class
         """
-        return f"[{__class__.__name__}] ({self.id}) {self.__dict__}"
+        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"

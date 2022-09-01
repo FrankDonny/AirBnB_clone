@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-"""module containing the User class"""
+"""module containing the city class"""
 from models.base_model import BaseModel
 
 
-class User(BaseModel):
-    """User class inherits from BaseModel"""
-    email = ""
-    password = ""
-    first_name = ""
-    last_name = ""
+class City(BaseModel):
+    """City class inherits from BaseModel"""
+    state_id = ""
+    name = ""
 
     def __init__(self, *args, **kwargs):
         """initialize from the parent class"""
