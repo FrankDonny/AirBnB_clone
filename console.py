@@ -34,12 +34,12 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, arg):
         """creates a new instance and returns its id"""
         if arg in key_list:
-            new = eval(arg + "()")
+            new = eval(arg + "()")  # arg()
             storage.save()
             print(new.id)
         elif arg == "":
             print("** class name missing **")
-        elif arg != "BaseModel":
+        elif arg not in key_list:
             print("** class doesn't exist **")
 
     def do_show(self, arg):
@@ -161,10 +161,11 @@ class HBNBCommand(cmd.Cmd):
                   "of an object")
         else:
             print("""
+
 Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
-                """)
+""")
 
 
 if __name__ == '__main__':
