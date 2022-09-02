@@ -105,10 +105,10 @@ class HBNBCommand(cmd.Cmd):
                 if k == obj:
                     setattr(storage.all()[k], new_attr,
                             new_attr_val.strip("\""))
-                    # if "." in new_attr_val.strip("\"") and any([x.isdigit() for x in new_attr_val]):
-                    #     new_attr_val = float(new_attr_val)
-                    # elif new_attr_val.isdigit():
-                    #     new_attr_val = int(new_attr_val)
+                    if type(getattr(obj_dict[k], new_attr)) is float:
+                        new_attr_val = float(new_attr_val)
+                    elif new_attr_val.isdigit():
+                        new_attr_val = int(new_attr_val)
                     storage.all()[k].save()
         elif len(arg.split()) == 0:
             print("** class name missing **")
@@ -157,14 +157,25 @@ class HBNBCommand(cmd.Cmd):
         elif arg == "create":
             print("Create: command to create a new object and return it's ID")
         elif arg == "show":
-            print("Show: command to display a string representation"
+            print("Show: command to display a string representation "
                   "of an object")
+        elif arg == "destroy":
+            print("Destroy: command to delete an existing instance")
+        elif arg == "all":
+            print("All: command to print instances created. "
+                  "If the no argument is passed to it, "
+                  "it prints all instances "
+                  "regardless of the class. "
+                  "If a class is passed as an argument, "
+                  "it prints all instances related to that class")
+        elif arg == "update":
+            print("Update: command to update an existing instance, "
+                  "by add a new attribute and a value")
         else:
             print("""
-
 Documented commands (type help <topic>):
-========================================
-EOF  help  quit
+==================================================
+EOF  help  quit  create  show  Destroy  all update
 """)
 
 
