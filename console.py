@@ -103,7 +103,12 @@ class HBNBCommand(cmd.Cmd):
             new_attr_val = args[3]
             for k, v in obj_dict.items():
                 if k == obj:
-                    setattr(storage.all()[k], new_attr, new_attr_val.strip("\""))
+                    setattr(storage.all()[k], new_attr,
+                            new_attr_val.strip("\""))
+                    # if "." in new_attr_val.strip("\"") and any([x.isdigit() for x in new_attr_val]):
+                    #     new_attr_val = float(new_attr_val)
+                    # elif new_attr_val.isdigit():
+                    #     new_attr_val = int(new_attr_val)
                     storage.all()[k].save()
         elif len(arg.split()) == 0:
             print("** class name missing **")
@@ -125,6 +130,17 @@ class HBNBCommand(cmd.Cmd):
                 print("** value missing **")
         elif len(arg.split()) > 4:
             pass
+
+    # def default(self, arg):
+    #     args = arg.split(".")
+    #     ct = 1
+    #     objs = storage.all()
+    #     if args[1] == "count()" and args[0] in key_list:
+    #         for key in objs:
+    #             ky = key.split()
+    #             if ky[0] == args[0]:
+    #                 ct += 1
+    #                 print(ct)
 
     def do_quit(self, line):
         """implementing the quit command"""

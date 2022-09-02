@@ -1,49 +1,9 @@
 {
-    "User.a353958b-b044-4a3d-aa21-bee6f1e9ffca": {
-        "id": "a353958b-b044-4a3d-aa21-bee6f1e9ffca",
-        "created_at": "2022-09-01T22:53:40.759336",
-        "updated_at": "2022-09-01T22:55:34.146923",
-        "email": "myemail@mail.com",
+    "User.c05c5709-8711-4146-8d9d-1fbb20291d91": {
+        "id": "c05c5709-8711-4146-8d9d-1fbb20291d91",
+        "created_at": "2022-09-02T02:25:45.586005",
+        "updated_at": "2022-09-02T02:27:25.998588",
+        "num": "78787.8",
         "__class__": "User"
-    },
-    "Place.034d4500-0b2f-4849-a327-de00a0a832ae": {
-        "id": "034d4500-0b2f-4849-a327-de00a0a832ae",
-        "created_at": "2022-09-01T22:56:38.881962",
-        "updated_at": "2022-09-01T22:56:38.881980",
-        "__class__": "Place"
-    },
-    "BaseModel.9024ae7c-a301-4022-84ea-84f37f6d3c03": {
-        "id": "9024ae7c-a301-4022-84ea-84f37f6d3c03",
-        "created_at": "2022-09-01T22:56:54.132369",
-        "updated_at": "2022-09-01T22:56:54.132380",
-        "__class__": "BaseModel"
-    },
-    "State.724f58e8-daf8-4b7d-93a3-55bedadf0785": {
-        "id": "724f58e8-daf8-4b7d-93a3-55bedadf0785",
-        "created_at": "2022-09-01T22:57:03.617483",
-        "updated_at": "2022-09-01T23:05:31.648938",
-        "Province": "FL",
-        "__class__": "State"
-    },
-    "City.75582efa-bf57-4cc9-962e-0f784516acb1": {
-        "id": "75582efa-bf57-4cc9-962e-0f784516acb1",
-        "created_at": "2022-09-01T22:57:10.592763",
-        "updated_at": "2022-09-01T23:00:15.497941",
-        "Los-Angeles": "street_115",
-        "__class__": "City"
-    },
-    "Amenity.0d098cf9-7542-4c2e-b1ff-c3d30c5d10f9": {
-        "id": "0d098cf9-7542-4c2e-b1ff-c3d30c5d10f9",
-        "created_at": "2022-09-01T22:57:43.111596",
-        "updated_at": "2022-09-01T23:04:21.379340",
-        "type": "Free_Food",
-        "__class__": "Amenity"
-    },
-    "Review.b3f7df10-f678-47b1-99f4-19eb34822524": {
-        "id": "b3f7df10-f678-47b1-99f4-19eb34822524",
-        "created_at": "2022-09-01T22:57:48.486182",
-        "updated_at": "2022-09-01T23:02:44.582497",
-        "report": "Good",
-        "__class__": "Review"
     }
 }

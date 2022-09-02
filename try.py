@@ -5,7 +5,10 @@
 # new = "!""new""!"
 # print(new.strip(f"{chr(33)}"))
 # print(new.strip("!"))
-text = "Update me ei hmmm"
-ls = text.split()
-# ls = list(text)
-print(len(ls))
+text = "the.hj"
+if "." in text and any([x.isdigit() for x in text]):
+    print(1)
+# ls = text.split()
+# # ls = list(text)
+# print(len(ls))
+# print(type(text))
