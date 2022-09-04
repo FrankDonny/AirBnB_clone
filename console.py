@@ -140,17 +140,6 @@ class HBNBCommand(cmd.Cmd):
         elif len(arg.split()) > 4:
             pass
 
-<<<<<<< HEAD
-=======
-    def do_quit(self, line):
-        """implementing the quit command"""
-        return True
-
-    def do_EOF(self, line):
-        """implementing the EOF"""
-        return True
-
->>>>>>> f78ccc316d66e9d7af48ca629a0736ba2aeb077c
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
