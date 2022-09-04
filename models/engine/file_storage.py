@@ -7,7 +7,7 @@ import json
 
 class FileStorage:
     """FileStorage class for manipulating the file storage"""
-    __file_path = "storage_file.json"
+    __file_path = "file.json"
     __objects = {}
 
     def all(self):
@@ -25,16 +25,16 @@ class FileStorage:
         for k, v in FileStorage.__objects.items():
             json_dict[k] = v.to_dict()
         with open(FileStorage.__file_path, "w", encoding="utf-8") as file:
-            json.dump(json_dict, file, indent=4)
+            json.dump(json_dict, file)
 
     def reload(self):
         """retrieves the information saved in the json file"""
-        if FileStorage.__file_path is True:
-            with open(FileStorage.__file_path, encoding="utf-8") as file:
+        try:
+            with open(FileStorage.__file_path, 'r',encoding="utf-8") as file:
                 json_obj = json.load(file)
                 for key, val in json_obj.items():
                     a_class = val["__class__"]
                     obj = eval(a_class + "(**val)")
                     FileStorage.__objects[key] = obj
-        else:
+        except:
             pass

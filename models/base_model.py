@@ -21,6 +21,7 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
             storage.new(self)
+            storage.save()
         else:
             for ky, value in kwargs.items():
                 if ky == "__class__":
@@ -50,8 +51,8 @@ class BaseModel:
         _dict = self.__dict__.copy()
         add_dict = {
             "__class__": self.__class__.__name__,
-            "created_at": self.created_at.isoformat(),
-            "updated_at": self.updated_at.isoformat()
+            "created_at": str(self.created_at.isoformat()),
+            "updated_at": str(self.updated_at.isoformat())
         }
         _dict.update(add_dict)
         return _dict
