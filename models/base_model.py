@@ -21,6 +21,7 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
             storage.new(self)
+            storage.save()
         else:
             for ky, value in kwargs.items():
                 if ky == "__class__":
