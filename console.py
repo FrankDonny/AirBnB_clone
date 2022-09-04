@@ -25,6 +25,7 @@ for i in class_dict:
 
 
 class HBNBCommand(cmd.Cmd):
+    """the HBNB class for the console"""
     prompt = "(hbnb) "
 
     def emptyline(self):
@@ -130,17 +131,6 @@ class HBNBCommand(cmd.Cmd):
                 print("** value missing **")
         elif len(arg.split()) > 4:
             pass
-
-    # def default(self, arg):
-    #     args = arg.split(".")
-    #     ct = 1
-    #     objs = storage.all()
-    #     if args[1] == "count()" and args[0] in key_list:
-    #         for key in objs:
-    #             ky = key.split()
-    #             if ky[0] == args[0]:
-    #                 ct += 1
-    #                 print(ct)
 
     def do_quit(self, line):
         """implementing the quit command"""
