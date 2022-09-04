@@ -9,6 +9,7 @@ import uuid
 
 class BaseModel:
     """The base class"""
+
     def __init__(self, *args, **kwargs):
         """
         initializing the base class

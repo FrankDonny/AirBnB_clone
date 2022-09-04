@@ -30,11 +30,11 @@ class FileStorage:
     def reload(self):
         """retrieves the information saved in the json file"""
         try:
-            with open(FileStorage.__file_path, 'r',encoding="utf-8") as file:
+            with open(FileStorage.__file_path, 'r', encoding="utf-8") as file:
                 json_obj = json.load(file)
                 for key, val in json_obj.items():
                     a_class = val["__class__"]
                     obj = eval(a_class + "(**val)")
                     FileStorage.__objects[key] = obj
-        except:
+        except Exception:
             pass
