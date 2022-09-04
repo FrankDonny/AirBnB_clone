@@ -140,34 +140,6 @@ class HBNBCommand(cmd.Cmd):
         """implementing the EOF"""
         return True
 
-    def do_help(self, arg: str):
-        """prints out help options relating to a command"""
-        if arg == "quit":
-            print("Quit: command to exit the program")
-        elif arg == "create":
-            print("Create: command to create a new object and return it's ID")
-        elif arg == "show":
-            print("Show: command to display a string representation "
-                  "of an object")
-        elif arg == "destroy":
-            print("Destroy: command to delete an existing instance")
-        elif arg == "all":
-            print("All: command to print instances created. "
-                  "If the no argument is passed to it, "
-                  "it prints all instances "
-                  "regardless of the class. "
-                  "If a class is passed as an argument, "
-                  "it prints all instances related to that class")
-        elif arg == "update":
-            print("Update: command to update an existing instance, "
-                  "by add a new attribute and a value")
-        else:
-            print("""
-Documented commands (type help <topic>):
-==================================================
-EOF  help  quit  create  show  Destroy  all update
-""")
-
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
