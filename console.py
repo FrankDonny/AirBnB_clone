@@ -134,7 +134,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, line):
         """implementing the quit command"""
-        quit()
+        return True
 
     def do_EOF(self, line):
         """implementing the EOF"""
