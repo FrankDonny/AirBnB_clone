@@ -32,6 +32,14 @@ class HBNBCommand(cmd.Cmd):
         """move to next line when enter is hit"""
         pass
 
+    def do_quit(self, line):
+        """implementing the quit command"""
+        return True
+
+    def do_EOF(self, line):
+        """implementing the EOF"""
+        return True
+
     def do_create(self, arg):
         """creates a new instance and returns its id"""
         if arg in key_list:
@@ -131,14 +139,6 @@ class HBNBCommand(cmd.Cmd):
                 print("** value missing **")
         elif len(arg.split()) > 4:
             pass
-
-    def do_quit(self, line):
-        """implementing the quit command"""
-        quit()
-
-    def do_EOF(self, line):
-        """implementing the EOF"""
-        return True
 
 
 if __name__ == '__main__':
