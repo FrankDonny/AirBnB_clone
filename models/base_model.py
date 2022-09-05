@@ -62,4 +62,5 @@ class BaseModel:
         """
         :return: the string representation of the class
         """
-        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
+        return "[{:s}] ({:s}) {:s}".format(self.__class__.__name__,
+                                           self.id, self.__dict__)

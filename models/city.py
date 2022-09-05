@@ -8,7 +8,3 @@ class City(BaseModel):
 
     state_id = ""
     name = ""
-
-    def __init__(self, *args, **kwargs):
-        """initialize from the parent class"""
-        super().__init__(*args, **kwargs)
